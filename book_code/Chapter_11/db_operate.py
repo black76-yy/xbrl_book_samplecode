@@ -119,6 +119,7 @@ def delete_company(edinet_code):
 """
 def main():
     session = setup_database()
+    # あなたのXBRLファイルのパスを指定(ただコピーしても動きません)
     xbrl_files = glob.glob(r'*フォルダ名\\*\\*\\XBRL\\PublicDoc\\*.xbrl')
     edinet_company_info_list = make_edinet_company_info_list(xbrl_files)
     create_company_data(session, edinet_company_info_list)
